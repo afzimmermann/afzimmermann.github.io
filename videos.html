@@ -1,0 +1,61 @@
+<!-- CSS  -->
+ <link href="video-js.css" rel="stylesheet">
+<!-- JS code -->
+<script src="video.js"></script>
+
+<!-- HTML -->
+<video id='hls-example'  class="video-js vjs-default-skin" width="1376" height="774" controls>
+
+</video>
+
+<p> NJ</p>
+  <ul>
+   <li> <a href="javascript:click('1')">Belmar</a> </li>
+   <li> <a href="javascript:click('2')">Manasquan</a> </li>
+   <li> <a href="javascript:click('3')">Manasquan Overview</a> </li>
+  </ul>
+  <p> NY </p>
+  <ul>
+   <li> <a href="javascript:click('4')">Rockaway 77</a> </li>
+   <li> <a href="javascript:click('5')">Rockaway 90</a> </li>
+   <li> <a href="javascript:click('6')">West End Long Beach</a> </li>
+  </ul>
+  <p> RI </p>
+  <ul>
+   <li> <a href="javascript:click('7')">Matunuck</a> </li>
+   <li> <a href="javascript:click('8')">Mismquamicut</a> </li>
+   <li> <a href="javascript:click('9')">Narragansett</a> </li>
+   <li> <a href="javascript:click('10')">Point Judith</a> </li>
+  </ul>
+
+
+<script>
+var player = videojs('hls-example');
+//player.play();
+
+function click(cam){
+
+  let list = ['',
+  'ec-belmar/playlist.m3u8',
+  'ec-manasquan/playlist.m3u8',
+  'ec-manasquanov/playlist.m3u8',
+
+  'ec-rockaway77th/playlist.m3u8',
+  'ec-rockaway90th/playlist.m3u8',
+  'ec-lbwestend/playlist.m3u8',
+
+  'ec-matunuck/playlist.m3u8',
+  'ec-misquamicut/playlist.m3u8',
+  'ec-narragansett/playlist.m3u8',
+  'ec-pointjudith/playlist.m3u8'
+
+];
+
+  let uglySLLink = 'https://ca'+'ms.'+'cd'+'n-s'+'urf'+'l'+'ine.com/'+'cd'+'n-ec/';
+  player.src(uglySLLink+list[cam])
+  player.play();
+}
+
+</script>
+
+
